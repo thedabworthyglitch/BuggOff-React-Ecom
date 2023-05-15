@@ -14,24 +14,49 @@ function Product({ id, title, price, description, category, image }) {
   );
   const [hasPrime] = useState(Math.random() < 0.5);
   return (
-    <div className="flex flex-col w-80 mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
-      <div className="relative pb-3/4">
-        <Image src={image} width={100} height={100} style={{
-          layout:"fill",
-          objectFit:"cover",
-          width: "60%",
-          margin: "auto"
-        }}/>
+    <div className="flex flex-col w-80  bg-white rounded-lg shadow-lg overflow-hidden mx-20" >
+      <div className="relative pb-3/4 max-h-50 min-h-50">
+        <Image
+          src={image}
+          width={100}
+          height={100}
+          style={{
+            layout: "fill",
+            objectFit: "cover",
+            width: "60%",
+            margin: "auto",
+          }}
+        />
       </div>
       <div className="p-4 flex flex-col flex-grow">
         <p className="text-gray-500 uppercase text-xs mb-1">{category}</p>
         <h2 className="text-lg font-medium mb-1">{title}</h2>
         <div className="flex items-center mb-1">
-          {(1 < rating) ? <StarIcon className="h-5 w-5 text-yellow-1  00" /> : <StarIcon className="h-5 w-5 text-yellow-1 00 hidden" />}
-          {(2 < rating) ? <StarIcon className="h-5 w-5 text-yellow-1  00" /> : <StarIcon className="h-5 w-5 text-yellow-1 00 hidden" />}
-          {(3 < rating) ? <StarIcon className="h-5 w-5 text-yellow-1  00" /> : <StarIcon className="h-5 w-5 text-yellow-1 00 hidden" />}
-          {(4 < rating) ? <StarIcon className="h-5 w-5 text-yellow-1  00" /> : <StarIcon className="h-5 w-5 text-yellow-1 00 hidden" />}
-          {(5 < rating) ? <StarIcon className="h-5 w-5 text-yellow-1  00" /> : <StarIcon className="h-5 w-5 text-yellow-1 00 hidden" />}
+          {1 < rating ? (
+            <StarIcon className="h-5 w-5 text-yellow-1  00" />
+          ) : (
+            <StarIcon className="h-5 w-5 text-yellow-1 00 hidden" />
+          )}
+          {2 < rating ? (
+            <StarIcon className="h-5 w-5 text-yellow-1  00" />
+          ) : (
+            <StarIcon className="h-5 w-5 text-yellow-1 00 hidden" />
+          )}
+          {3 < rating ? (
+            <StarIcon className="h-5 w-5 text-yellow-1  00" />
+          ) : (
+            <StarIcon className="h-5 w-5 text-yellow-1 00 hidden" />
+          )}
+          {4 < rating ? (
+            <StarIcon className="h-5 w-5 text-yellow-1  00" />
+          ) : (
+            <StarIcon className="h-5 w-5 text-yellow-1 00 hidden" />
+          )}
+          {5 < rating ? (
+            <StarIcon className="h-5 w-5 text-yellow-1  00" />
+          ) : (
+            <StarIcon className="h-5 w-5 text-yellow-1 00 hidden" />
+          )}
         </div>
         <p className="text-gray-500 text-sm mb-2 line-clamp-3">{description}</p>
         <div className="flex items-center mb-2">

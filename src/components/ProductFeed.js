@@ -1,26 +1,24 @@
-import Image from 'next/image'
-import React from 'react'
-import Product from './Product'
+import Image from "next/image";
+import React from "react";
+import Product from "./Product";
+import { Carousel } from "react-responsive-carousel";
 
-function ProductFeed({ products}) {
+function ProductFeed({ products }) {
   return (
-    <div className="grid grid-flow-row-dense md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 md:-mt-52 mx-auto">
-
-      {products.slice(0,4).map(({ id, title, price, description, category, image }) => (
-        <Product 
-          key={id}
-          id={id}
-          title={title}
-          price={price}
-          description={description}
-          category={category}
-          image={image}
-        />
-        ))}
+    <div className="mx-auto mb-10">
+      <Carousel
+        autoPlay
+        infiniteLoop
+        showStatus={false}
+        showIndicators={false}
+        showThumbs={false}
+        interval={4000}
+        centerMode
+        centerSlidePercentage={30}
         
-
-        <div className="md:col-span-2">
-          {products.slice(4,5).map(({ id, title, price, description, category, image }) => (
+      >
+        {products.map(({ id, title, price, description, category, image }) => (
+          <div key={id} className="mx-10 mt-56">
             <Product
               key={id}
               id={id}
@@ -30,21 +28,11 @@ function ProductFeed({ products}) {
               category={category}
               image={image}
             />
-          ))}
-        </div>
-        {products.slice(5,products.length).map(({ id, title, price, description, category, image }) => (
-            <Product
-              key={id}
-              id={id}
-              title={title}
-              price={price}
-              description={description}
-              category={category}
-              image={image}
-            />
-          ))}
+          </div>
+        ))}
+      </Carousel>
     </div>
-  )
+  );
 }
 
-export default ProductFeed
+export default ProductFeed;

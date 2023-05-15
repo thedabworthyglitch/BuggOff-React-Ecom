@@ -1,59 +1,70 @@
-import React from 'react'
-import Image from 'next/image'
+import React from "react";
+import Image from "next/image";
 import {
-    MenuIcon,
-    SearchIcon,
-    ShoppingCartIcon,
+  FilterIcon,
+  HeartIcon,
+  SearchIcon,
+  ShoppingCartIcon,
+  UserIcon,
 } from "@heroicons/react/outline";
+import HeaderButton from "./HeaderButton";
 function Header() {
   return (
-    <header>
-        {/* Top nav */}
-        <div className="flex items-center bg-black p-1 flex-grow py-2">
-            <div className="mt-2 flex items-center flex-grow sm:flex-grow-0">
+    <header style={{ background: "#FFFCFC" }}>
+      {/* Top nav */}
+      <div className="px-10" style={{ background: "#FFFCFC" }}>
+        <div
+          className="flex items-center p-1 flex-grow py-5 border-b-2 border-black border-solid relative"
+          style={{
+            color: "#3B3C3C",
+          }}
+        >
+          {/* Left */}
+          <div className="flex items-center text-xs space-x-6 mx-6 whitespace-nowrap justify-around">
+            <div className="link">
+              <p className="font-regular md:text-lg">Home</p>
             </div>
-            {/* Search */} 
-            <div className="hidden sm:flex items-center h-10 w-10 rounded-md flex-grow cursor-pointer bg-pink-400 hover:bg-green-500">
-                <input className="p- h-full width-2  flex-shrink rounded-l-md focus:outline-none px-2 " type="text" />
-                <SearchIcon className="h-12 p-4"/>
+            <div className="link">
+              <p className="font-regular md:text-lg">About Us</p>
             </div>
-            {/* Right */}
-            <div className="text-white flex items-center text-xs space-x-6 mx-6 whitespace-nowrap">
-                <div className="link">
-                <button className="bg-blue-500 h-10 w-20 text-white py-2 rounded-lg font-medium transition-colors duration-300 hover:bg-blue-600">
-                <p className="font-extrabold md:text-sm">Sign Up</p>
-                </button>
-                
-                
-                
-                    
-                </div>
-                
-                <div className="relative link flex items-center">
-                    <span className="fixed top-0 right-10 md:right-7 h-4 w-4 bg-yellow-100 text-center rounded-full text-black font-bold">0</span>
-                    <ShoppingCartIcon className="h-7"/>
-                    <p className="hidden md:inline  md:text-sm mt-2">Cart</p>
-                </div>
-                
-            </div>
+          </div>
 
+          {/* Logo */}
+          <div className="text-black hidden sm:flex items-center rounded-md flex-grow justify-around">
+            <div
+              style={{
+                fontFamily: "'Playfair Display', serif",
+                transform: "translate(50%)",
+              }}
+            >
+              <p className="font-regular text-4xl">Naari</p>
+            </div>
+          </div>
+
+          {/* Right */}
+          <div className="flex items-center text-xs space-x-6 mx-6 whitespace-nowrap justify-around">
+            <HeaderButton Icon={SearchIcon} text={"Search"} />
+            <HeaderButton Icon={FilterIcon} text={"Filters"} />
+            <HeaderButton Icon={HeartIcon} text={"Wishlist"} />
+            <HeaderButton Icon={ShoppingCartIcon} text={"Cart"} />
+            <HeaderButton Icon={UserIcon} text={"Profile"} />
+          </div>
         </div>
+      </div>
 
-        {/* Bottom nav */}
-        <div>
-            <div className="flex items-center space-x-3 p-2 pl-6 bg-black text-white text-sm">
-                
-                
-                <p className="link">Business</p>
-                
-                <p className="link hidden lg:inline-flex">Electronics</p>
-                <p className="link hidden lg:inline-flex">Food & Grocery</p>
-
-            </div>
+      {/* Bottom nav */}
+      <div>
+        <div className="flex items-center space-x-3 p-2 pl-6 text-md justify-around mx-96 my-3">
+          <p className="link">Dresses</p>
+          <p className="link hidden lg:inline-flex">Bottoms</p>
+          <p className="link hidden lg:inline-flex">Tops</p>
+          <p className="link hidden lg:inline-flex">Traditional</p>
+          <p className="link hidden lg:inline-flex">Accessories</p>
+          <p className="link hidden lg:inline-flex">Footwear</p>
         </div>
-      
+      </div>
     </header>
-  )
+  );
 }
 
-export default Header
+export default Header;

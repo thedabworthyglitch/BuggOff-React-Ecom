@@ -5,9 +5,9 @@ import ProductFeed from "../components/ProductFeed";
 
 export default function Home({ products }) {
   return (
-    <div className="bg-gray-100">
+    <div style={{ background: "#FFFCFC" }}>
       <Head>
-        <title>Bugg Off</title>
+        <title>Naari</title>
       </Head>
 
       <Header />
