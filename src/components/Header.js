@@ -47,7 +47,9 @@ function Header() {
             <HeaderButton Icon={FilterIcon} text={"Filters"} />
             <HeaderButton Icon={HeartIcon} text={"Wishlist"} />
             <HeaderButton Icon={ShoppingCartIcon} text={"Cart"} />
-            <HeaderButton Icon={UserIcon} text={"Profile"} />
+            <Link href="/login">
+              <HeaderButton Icon={UserIcon} text={"Profile"} />
+            </Link>
           </div>
         </div>
       </div>
